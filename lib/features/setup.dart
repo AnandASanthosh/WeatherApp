@@ -11,7 +11,8 @@ final locator = GetIt.I;
 
 void setupLocator() {
   locator.registerLazySingleton<ApiAbstract>(() => DioApi());
-  locator.registerLazySingleton<HomeDataSource>(() => HomeDataSourceRemoteImpl());
+  //Home
+  locator.registerLazySingleton<HomeDataSource>(() => HomeDataSourceRemoteImpl(locator.get()));
   locator.registerLazySingleton<HomeRepository>(() => HomeRepositoryImpl(locator.get()));
   locator.registerLazySingleton<GetWeatherData>(() => GetWeatherData(locator.get()));
 }
