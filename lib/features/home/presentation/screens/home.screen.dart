@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lottie/lottie.dart';
 
-import 'package:weather_app/core/assets/lottie.assets.dart';
-import 'package:weather_app/features/home/domain/entities/weather.entity.dart';
-import 'package:weather_app/features/home/presentation/widgets/custom.card.dart';
 import 'package:weather_app/features/home/presentation/widgets/error.card.dart';
 import 'package:weather_app/features/home/presentation/widgets/loading.indicator.dart';
 import 'package:weather_app/features/home/presentation/widgets/searchfield.appbar.dart';
