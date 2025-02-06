@@ -1,12 +1,13 @@
 import 'package:awesome_dio_interceptor/awesome_dio_interceptor.dart';
 import 'package:dio/dio.dart';
+import 'package:weather_app/core/dio/interceptors/apikey.interceptor.dart';
 
 import '../api_abstract.dart';
 import '../api_response.dart';
 
 class DioApi implements ApiAbstract {
   @override
-  String baseUrl = "https://cat-fact.herokuapp.com";
+  String baseUrl = "https://api.openweathermap.org/data/2.5/";
   late Dio _dio;
 
   DioApi() {
@@ -23,6 +24,7 @@ class DioApi implements ApiAbstract {
     );
     _dio = Dio(options);
     _dio.interceptors.add(AwesomeDioInterceptor());
+    _dio.interceptors.add(ApiKeyInterceptor());
   }
 
   @override
