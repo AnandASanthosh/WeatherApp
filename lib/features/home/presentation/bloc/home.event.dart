@@ -6,3 +6,12 @@ sealed class HomeEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class GetWeatherDataEvent extends HomeEvent {
+  final String cityName;
+
+  const GetWeatherDataEvent(this.cityName);
+
+  @override
+  List<Object> get props => [cityName];
+}
