@@ -1,28 +1,31 @@
-import 'dart:developer';
+// import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/features/app.dart';
+import 'package:weather_app/features/setup.dart';
 
 void main() {
-  Bloc.observer = const AppBlocObserver();
+  // Bloc.observer = const AppBlocObserver();
+  setupLocator();
+
   runApp(const App());
 }
 
-class AppBlocObserver extends BlocObserver {
-  const AppBlocObserver();
+// class AppBlocObserver extends BlocObserver {
+//   const AppBlocObserver();
 
-  @override
-  void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
-    super.onChange(bloc, change);
-  }
+//   @override
+//   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
+//     super.onChange(bloc, change);
+//   }
 
-  @override
-  void onTransition(
-    Bloc<dynamic, dynamic> bloc,
-    Transition<dynamic, dynamic> transition,
-  ) {
-    super.onTransition(bloc, transition);
-    log(transition.toString());
-  }
-}
+//   @override
+//   void onTransition(
+//     Bloc<dynamic, dynamic> bloc,
+//     Transition<dynamic, dynamic> transition,
+//   ) {
+//     super.onTransition(bloc, transition);
+//     log(transition.toString());
+//   }
+// }

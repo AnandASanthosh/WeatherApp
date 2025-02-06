@@ -1,8 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-class HomeEntity extends Equatable {
-
-  const HomeEntity();
+class WeatherDataEntity extends Equatable {
+  const WeatherDataEntity();
   @override
   List<Object?> get props => [];
 }

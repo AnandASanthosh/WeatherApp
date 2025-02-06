@@ -4,17 +4,17 @@ import 'package:weather_app/core/usecase.dart';
 import '../entities/home.entity.dart';
 import '../repositories/home.repository.abstract.dart';
 
-class HomeUsecase extends Usecase<HomeEntity, HomeParam> {
+class GetWeatherData extends Usecase<WeatherDataEntity, WeatherDataParam> {
   final HomeRepository _repository;
-  HomeUsecase(this._repository);
+  GetWeatherData(this._repository);
   @override
-  Future<HomeEntity> call(params) async{
-    return HomeEntity();
+  Future<WeatherDataEntity> call(params) async {
+    return WeatherDataEntity();
   }
 }
 
-class HomeParam extends Equatable {
-  const HomeParam();
+class WeatherDataParam extends Equatable {
+  const WeatherDataParam();
   toJson() {
     return {};
   }
