@@ -21,7 +21,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(HomeLoaded(data));
     } catch (e, s) {
       log("get Weather data error", error: e, stackTrace: s);
-      emit(HomeError("Failed to get weather data"));
+      var message = "Failed to get weather data";
+      if (e is String) {
+        message = e;
+      }
+    
+      emit(HomeError(message));
     }
   }
 }

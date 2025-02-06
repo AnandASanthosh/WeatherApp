@@ -11,7 +11,12 @@ class HomeDataSourceRemoteImpl extends HomeDataSource {
   Future<WeatherData> getWeatherData({required String city}) async {
     try {
       var data = await _api.get("weather?q=$city");
-
+      if (data.statusCode != 200) {
+        if (data.statusCode == 404) {
+          throw ("City not found");
+        }
+        throw ("Network Error");
+      }
       return WeatherData.fromJson(data.body);
     } catch (e) {
       rethrow;
