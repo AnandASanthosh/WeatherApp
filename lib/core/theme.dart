@@ -21,17 +21,20 @@ final themeData = ThemeData(
       fontSize: 34,
       fontWeight: FontWeight.bold,
     ),
+    headlineSmall: TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold,
+    ),
   ),
-  
   inputDecorationTheme: InputDecorationTheme(
     hintStyle: TextStyle(
       color: Colors.grey,
     ),
-
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
     ),
     fillColor: Colors.white,
     filled: true,
   ),
+  dividerColor: Colors.white,
 );

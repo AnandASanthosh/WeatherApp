@@ -10,8 +10,9 @@ class TemperatureText extends StatelessWidget {
       text: TextSpan(
         style: Theme.of(context).textTheme.displayLarge,
         children: [
+          TextSpan(text: "°", style: TextStyle(color: Colors.transparent)),
           TextSpan(
-            text: temperature.toStringAsFixed(0),
+            text: temperature.toInt().toString(),
           ),
           TextSpan(text: "°", style: TextStyle(color: Colors.red)),
         ],

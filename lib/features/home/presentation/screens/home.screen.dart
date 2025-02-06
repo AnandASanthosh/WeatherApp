@@ -26,10 +26,10 @@ class HomeScreen extends StatelessWidget {
             return LoadingIndicator();
           }
           if (state is HomeError) {
-            return ErrorCard(message: state.message);
+            return SingleChildScrollView(child: ErrorCard(message: state.message));
           }
           if (state is HomeLoaded) {
-            return WeatherCard(data: state.data);
+            return SingleChildScrollView(child: WeatherCard(data: state.data));
           }
           return Center(child: Text("Use the above text field to search for a city"));
         },
