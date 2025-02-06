@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:weather_app/core/usecase.dart';
 
-import '../entities/home.entity.dart';
+import '../entities/weather.entity.dart';
 import '../repositories/home.repository.abstract.dart';
 
 class GetWeatherData extends Usecase<WeatherDataEntity, WeatherDataParam> {
@@ -9,16 +9,14 @@ class GetWeatherData extends Usecase<WeatherDataEntity, WeatherDataParam> {
   GetWeatherData(this._repository);
   @override
   Future<WeatherDataEntity> call(params) async {
-    return WeatherDataEntity();
+    return _repository.getWeatherData(params.cityName);
   }
 }
 
 class WeatherDataParam extends Equatable {
-  const WeatherDataParam();
-  toJson() {
-    return {};
-  }
+  final String cityName;
+  const WeatherDataParam({required this.cityName});
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [cityName];
 }
